@@ -29,6 +29,7 @@
     background-color: var(--third-color);
     margin: 2em;
     border-radius: 14px;
+    max-width:100%;
     min-height: 100%;
     padding: 16px;
     width:50%;
@@ -38,9 +39,9 @@
     grid-template-rows: auto auto auto auto auto;
     
     grid-template-areas: 
-    "h1 h1"
-    "input btn"
-    "ul ul";
+    "h1 h1 h1"
+    "input input btn"
+    "ul ul ul";
     row-gap: 2px;
     
 }
@@ -111,8 +112,8 @@ h1{
 
 @media (max-width: 1440px){
     .container{
-        grid-template-columns: 2fr 1fr;
-        grid-area: "h1 h1" "input btn";
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-area: "h1 h1 h1" "input input btn";
     }
     .input{
         display: flex;
@@ -130,8 +131,61 @@ h1{
 }
 
 @media (max-width: 768px){
+    .container{
+        grid-template-columns: 1fr 1fr;
+        grid-area: "h1 h1""input btn"
+    }
+
     .input--amount{
-        height:25px;
-        width: 50px;
+        height:40px;
+        width: 75px;
+        margin-left:20px;
+    }
+
+    .input--desc{
+        height: 40px;
+        width:80px;
+        margin-right: 40px;
+    }
+    
+    #Add{
+        height: 40px;
+        margin-right: 30px;
+    }
+}
+
+
+@media (max-width: 320px){
+    .container{
+        grid-template-columns: 1fr;
+        width:80%;
+        grid-template-areas: "h1""input""btn""ul";
+        
+    }
+
+    .input{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input--amount{
+        height:30px;
+        width:120px;
+        margin-right: 0px;
+        margin-bottom:10px;
+        border:2px solid black;
+        font-size: small;
+    }
+
+    .input--desc{
+        height:30px;
+        width:120px;
+        margin-right: 20px;
+        
+    }
+    #Add{
+        margin-left: 37%;
     }
 }
