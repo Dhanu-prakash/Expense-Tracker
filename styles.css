@@ -4,7 +4,7 @@
     --first-color: #dbd8e3;
     --second-color: #5c5470;
     --third-color:#352f44;
-    --fourth-color:#2a2438; 
+    
 }
 	
 
@@ -20,7 +20,7 @@
 .wrapper{
     display: flex;
     justify-content: center;
-    background-color: var(--fourth-color);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(61, 2, 69, 1) 16%, rgba(191, 0, 255, 1) 100%);
     min-height:100vh;
     
 }
@@ -41,9 +41,15 @@
     grid-template-areas: 
     "h1 h1"
     "input btn"
+    "total total"
     "ul ul";
     row-gap: 2px;
 }
+
+.totalh1{
+    grid-area: total;
+}
+
 #myList{
     grid-area: ul;
     width:100%;
@@ -99,6 +105,15 @@ h1{
     margin-left:70px;
 }
 
+.input--quantity{
+    grid-area: quantity;
+    height: 50px;
+    width: 75px;
+    margin-left: 40px;
+    color:var(--second-color);
+    text-align: center;
+}
+
 .input--desc{
     grid-area: desc;
     height: 50px;
@@ -108,7 +123,7 @@ h1{
     color: var(--second-color);
 }
 
-.input--amount::placeholder,.input--desc::placeholder{
+.input--amount::placeholder,.input--desc::placeholder,.input--quantity::placeholder{
     color: var(--second-color);
 }
 
